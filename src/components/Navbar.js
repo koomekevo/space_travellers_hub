@@ -16,7 +16,7 @@ const Navbar = () => {
         />
         {''}
         <p className='space-travellers'>Space Traveler's Hub</p>
-      
+
     </nav>
   );
 };
