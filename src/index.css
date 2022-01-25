@@ -25,3 +25,42 @@ code {
     'Courier New',
     monospace;
 }
+
+li {
+  list-style: none;
+}
+
+.logo {
+  display: flex;
+  gap: 11px;
+  padding: 6px 0 0 2px;
+  font-size: 1.5rem;
+}
+
+.header-logo {
+  padding-top: 4px;
+}
+
+.header-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-nav_ul {
+  display: flex;
+}
+
+.rockets,
+.missions,
+.profile {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  cursor: pointer;
+  color: rgb(10, 10, 250);
+}
+
+.rockets:active,
+.missions:active,
+.profile:active {
+  text-decoration: underline;
+}
