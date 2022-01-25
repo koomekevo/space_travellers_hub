@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../logo.png';
 
 const Navbar = () => (
@@ -12,7 +13,7 @@ const Navbar = () => (
         height="50"
         className="header-logo"
       />
-      <p className="space-travellers">Space Travelers&apos Hub</p>
+      <p className="space-travellers">Space Travelers Hub</p>
     </div>
     <div className="header-nav">
       <ul className="header-nav_ul">
