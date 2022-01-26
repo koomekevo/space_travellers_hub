@@ -13,12 +13,11 @@ const App = () => (
   <Router>
     <div className="app">
       <Header />
-      <Missions />
       <Switch>
         <Route exact path="/">
           <Rockets />
         </Route>
-        <Route path="/Missions">
+        <Route path="/">
           <Missions />
         </Route>
         <Route path="/Profile">
