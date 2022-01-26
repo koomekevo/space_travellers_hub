@@ -1,10 +1,14 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { getRocket } from '../redux/rockets/rockets';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  getRocket,
+} from '../redux/rockets/rockets';
 
 const RocketsCards = () => {
   const dispatch = useDispatch();
   const fetchApi = 'https://api.spacexdata.com/v3/rockets';
+
+  const myRocketArray = useSelector((state) => state.rockets);
 
   useEffect(() => {
     const apiRockets = async () => {
@@ -12,29 +16,29 @@ const RocketsCards = () => {
       const rockets = await fetchRockets.json();
       return dispatch(getRocket(rockets));
     };
-    apiRockets();
+    if (myRocketArray.length === 0) {
+      apiRockets();
+    }
   }, []);
 
   return (
-    <div>
-      <div>
-        <img src="" className="rocket-img" alt="" />
-      </div>
-      <div>
-        <h4>Rocket Name</h4>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis interdum
-          dolor et tortor mattis pellentesque. Aliquam aliquet mollis felis,
-          malesuada commodo nisl congue sit amet. Nullam mauris elit, posuere
-          sed facilisis quis, dictum imperdiet augue
-        </p>
-        <button
-          type="button"
-          title="button"
-        >
-          Reserve
-        </button>
-      </div>
+    <div className="rocket-card">
+      {myRocketArray.map((rocket) => (
+        <div key={rocket.id} className="rockets-div">
+          <div className="rocket-imgs">
+            <img
+              src={rocket.flickr_images}
+              alt={rocket.rocket_name}
+              width="300"
+              height="200"
+              className="rocket-img"
+            />
+          </div>
+          <div className="rockets-desc">
+            <h3 className="rockets-desc-title">{rocket.rocket_name}</h3>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
