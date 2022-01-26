@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from '../logo.png';
 
 const Navbar = () => (
@@ -7,13 +8,19 @@ const Navbar = () => (
       <img
         alt=""
         src={logo}
-        width="35"
-        height="35"
+        empty-myprofile
+        width="50"
+        height="50"
         className="header-logo"
       />
-      {' '}
-
-      Space Travelers Hub
+      <p className="space-travellers">Space Travelers Hub</p>
+    </div>
+    <div className="header-nav">
+      <ul className="header-nav_ul">
+        <li className="profile">
+          <NavLink to="/Profile" exact>My Profile</NavLink>
+        </li>
+      </ul>
     </div>
   </nav>
 );
