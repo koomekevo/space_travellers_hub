@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getRocket,
+  reserveRocket,
+  unreserveRocket,
 } from '../redux/rockets/rockets';
 
 const RocketsCards = () => {
@@ -21,6 +23,14 @@ const RocketsCards = () => {
     }
   }, []);
 
+  const reserveRockets = (e) => {
+    dispatch(reserveRocket(e.target.id));
+  };
+
+  const unReserveRockets = (e) => {
+    dispatch(unreserveRocket(e.target.id));
+  };
+
   return (
     <div className="rocket-card">
       {myRocketArray.map((rocket) => (
@@ -31,11 +41,36 @@ const RocketsCards = () => {
               alt={rocket.rocket_name}
               width="300"
               height="200"
+              className="header-logo"
+              // eslint-disable-next-line react/jsx-no-duplicate-props
               className="rocket-img"
             />
           </div>
           <div className="rockets-desc">
             <h3 className="rockets-desc-title">{rocket.rocket_name}</h3>
+            <p className="rockets-desc-p">
+              {rocket.reserved ? <button type="button" className="reserved-span">Reserved</button> : null}
+              {rocket.description}
+            </p>
+            {rocket.reserved ? (
+              <button
+                type="button"
+                onClick={unReserveRockets}
+                id={rocket.id}
+                className="unreserve-btn"
+              >
+                Cancel Reservation
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="rockets-desc-btn"
+                onClick={reserveRockets}
+                id={rocket.id}
+              >
+                Reserve Rocket
+              </button>
+            )}
           </div>
         </div>
       ))}
