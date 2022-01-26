@@ -8,12 +8,12 @@ const Navbar = () => (
       <img
         alt=""
         src={logo}
-        empty-myprofile
-        width="50"
-        height="50"
+        width="35"
+        height="35"
         className="header-logo"
       />
-      <p className="space-travellers">Space Travelers Hub</p>
+
+      Space Travelers Hub
     </div>
     <div className="header-nav">
       <ul className="header-nav_ul">
@@ -21,7 +21,7 @@ const Navbar = () => (
           <NavLink to="/" exact>Rockets</NavLink>
         </li>
         <li className="missions">
-          <NavLink to="/Missions" exact>Missions</NavLink>
+          <NavLink to="./missions/Missions" exact>Missions</NavLink>
         </li>
         <li className="profile">
           <NavLink to="/Profile" exact>My Profile</NavLink>
