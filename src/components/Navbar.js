@@ -17,6 +17,9 @@ const Navbar = () => (
     </div>
     <div className="header-nav">
       <ul className="header-nav_ul">
+        <li className="rockets">
+            <NavLink to='/' exact>Rockets</NavLink>
+          </li>
         <li className="profile">
           <NavLink to="/Profile" exact>My Profile</NavLink>
         </li>
