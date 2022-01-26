@@ -1,13 +1,10 @@
 import React from 'react';
-import RocketsCards from './RocketsCards.js';
+import RocketsCards from '../pages/RocketsCards';
 
-const Rockets = () => {
-  const r = '';
-  return (
-    <div>
-      <RocketsCards />
-    </div>
-  );
-};
+const Rockets = () => (
+  <div>
+    <RocketsCards />
+  </div>
+);
 
 export default Rockets;
