@@ -43,13 +43,6 @@ const MissionsList = () => {
             const bdj = badgeClass(mission.joined);
             let memberStatus;
             let memberAction;
-            if (mission.joined) {
-              memberAction = 'Leave mission';
-              memberStatus = 'Active member';
-            } else {
-              memberAction = 'Join mission';
-              memberStatus = 'Not a member';
-            }
             return (
               <tr key={mission.mission_id} className="pb-5">
                 <td>{mission.mission_name}</td>
