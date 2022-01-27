@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   getRocket,
+  reserveRocket,
+  unreserveRocket,
 } from '../redux/rockets/rockets';
 
 const RocketsCards = () => {
@@ -21,6 +23,16 @@ const RocketsCards = () => {
     }
   }, []);
 
+  // eslint-disable-next-line no-unused-vars
+  const reserveRockets = (e) => {
+    dispatch(reserveRocket(e.target.id));
+  };
+
+  // eslint-disable-next-line no-unused-vars
+  const unReserveRockets = (e) => {
+    dispatch(unreserveRocket(e.target.id));
+  };
+
   return (
     <div className="rocket-card">
       {myRocketArray.map((rocket) => (
@@ -38,7 +50,18 @@ const RocketsCards = () => {
           </div>
           <div className="rockets-desc">
             <h3 className="rockets-desc-title">{rocket.rocket_name}</h3>
-
+            <p className="rockets-desc-p">
+              {rocket.reserved ? (
+                <button
+                  type="button"
+                  className="reserved-span rocktbtn"
+                  title="button"
+                >
+                  Reserved
+                </button>
+              ) : null}
+              {rocket.description}
+            </p>
           </div>
         </div>
       ))}
