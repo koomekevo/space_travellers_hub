@@ -4,10 +4,11 @@
 
 ## Built With
 
-- Reactjs
-- React-Bootstrap
+- React.js
 - React router
 - React Redux.
+- React Logger.
+- React Thunks
 
 ## Getting Started
 
