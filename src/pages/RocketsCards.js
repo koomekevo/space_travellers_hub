@@ -23,12 +23,10 @@ const RocketsCards = () => {
     }
   }, []);
 
-  // eslint-disable-next-line no-unused-vars
   const reserveRockets = (e) => {
     dispatch(reserveRocket(e.target.id));
   };
 
-  // eslint-disable-next-line no-unused-vars
   const unReserveRockets = (e) => {
     dispatch(unreserveRocket(e.target.id));
   };
@@ -62,6 +60,27 @@ const RocketsCards = () => {
               ) : null}
               {rocket.description}
             </p>
+            {rocket.reserved ? (
+              <button
+                type="button"
+                title="button"
+                onClick={unReserveRockets}
+                id={rocket.id}
+                className="unreserve-btn rocktbtn"
+              >
+                Cancel Reservation
+              </button>
+            ) : (
+              <button
+                type="button"
+                title="button"
+                className="rockets-desc-btn rocktbtn"
+                onClick={reserveRockets}
+                id={rocket.id}
+              >
+                Reserve Rocket
+              </button>
+            )}
           </div>
         </div>
       ))}
