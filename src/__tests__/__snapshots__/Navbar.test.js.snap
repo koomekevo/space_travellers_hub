@@ -17,7 +17,7 @@ exports[`Render the Navbar Renders the navbar 1`] = `
     <p
       className="space-travellers"
     >
-      Space Travelers Hub
+      Space Traveler's Hub
     </p>
   </div>
   <div
