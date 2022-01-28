@@ -60,7 +60,7 @@ const RocketsCards = () => {
               ) : null}
               {rocket.description}
             </p>
-            {rocket.reserved ? (
+            {rocket.reserved && (
               <button
                 type="button"
                 title="button"
@@ -70,7 +70,8 @@ const RocketsCards = () => {
               >
                 Cancel Reservation
               </button>
-            ) : (
+            )}
+            {!rocket.reserved && (
               <button
                 type="button"
                 title="button"

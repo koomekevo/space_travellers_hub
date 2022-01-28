@@ -41,25 +41,30 @@ const MissionsList = () => {
           {missions.map((mission) => {
             const btn = btnClass(mission.joined);
             const bdj = badgeClass(mission.joined);
-            let memberStatus;
-            let memberAction;
-            if (mission.joined) {
-              memberAction = 'Leave mission';
-              memberStatus = 'Active member';
-            } else {
-              memberAction = 'Join mission';
-              memberStatus = 'NOT A MEMBER';
-            }
             return (
               <tr key={mission.mission_id} className="pb-5">
                 <td>{mission.mission_name}</td>
                 <td className="pb-4">{mission.description}</td>
-                <td>
-                  <span className={bdj}>{memberStatus}</span>
-                </td>
-                <td>
-                  <button type="button" className={btn} onClick={() => handelMission(mission)}>{memberAction}</button>
-                </td>
+                {!mission.joined && (
+                <>
+                  <td>
+                    <span className={bdj}>Not a member</span>
+                  </td>
+                  <td>
+                    <button type="button" className={btn} onClick={() => handelMission(mission)}>Join mission</button>
+                  </td>
+                </>
+                )}
+                {mission.joined && (
+                <>
+                  <td>
+                    <span className={bdj}>Active member</span>
+                  </td>
+                  <td>
+                    <button type="button" className={btn} onClick={() => handelMission(mission)}>Leave mission</button>
+                  </td>
+                </>
+                )}
               </tr>
             );
           })}
