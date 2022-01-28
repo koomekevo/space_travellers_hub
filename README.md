@@ -2,16 +2,30 @@
 
  Space Travellers' Hub is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
+## Live demo
+https://kevin-elshamy.netlify.app/
+
+# Screenshots
+### Rockets Page
+
+![](./src/images/rockets.png)
+
+### Missions Page
+
+![](./src/images/missions.png)
+
+### My Profile Page
+
+![](./src/images/profile.png)
 ## Built With
 
-- Reactjs
-- React-Bootstrap
+- React.js
 - React router
 - React Redux.
+- React Logger.
+- React Thunks
 
 ## Getting Started
-
-To get a local copy up and running follow these simple example steps.
 
 ### Setup
 
